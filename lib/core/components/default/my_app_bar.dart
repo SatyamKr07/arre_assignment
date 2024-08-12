@@ -11,10 +11,10 @@ class CustomAppBar extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
         color: Colors.grey[200]!.withOpacity(0.1),
-        borderRadius: BorderRadius.vertical(bottom: Radius.circular(16)),
+        borderRadius: const BorderRadius.vertical(bottom: Radius.circular(16)),
       ),
       child: ClipRRect(
-        borderRadius: BorderRadius.vertical(bottom: Radius.circular(16)),
+        borderRadius: const BorderRadius.vertical(bottom: Radius.circular(16)),
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
           child: Container(
@@ -27,8 +27,8 @@ class CustomAppBar extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 32),
-                  Row(
+                  const SizedBox(height: 32),
+                  const Row(
                     children: [
                       Text(
                         'Arré',
@@ -46,8 +46,8 @@ class CustomAppBar extends StatelessWidget {
                       color: Colors.greenAccent.withOpacity(0.6),
                       borderRadius: BorderRadius.circular(16),
                     ),
-                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    child: Row(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    child: const Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Icon(
@@ -67,16 +67,16 @@ class CustomAppBar extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: 24),
+                  const SizedBox(height: 24),
                 ],
               ),
               actions: [
                 IconButton(
-                  icon: Icon(Icons.notifications_outlined, size: 24),
+                  icon: const Icon(Icons.notifications_outlined, size: 24),
                   onPressed: () {},
                 ),
                 IconButton(
-                  icon: Icon(Icons.message_outlined, size: 24),
+                  icon: const Icon(Icons.message_outlined, size: 24),
                   onPressed: () {},
                 ),
               ],

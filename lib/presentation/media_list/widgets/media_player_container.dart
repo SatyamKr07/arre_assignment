@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 class MediaPlayerContainer extends StatelessWidget {
   final VoidCallback onDismiss;
 
-  const MediaPlayerContainer({Key? key, required this.onDismiss})
-      : super(key: key);
+  const MediaPlayerContainer({super.key, required this.onDismiss});
 
   @override
   Widget build(BuildContext context) {
@@ -16,19 +15,19 @@ class MediaPlayerContainer extends StatelessWidget {
       },
       child: Container(
         height: MediaQuery.of(context).size.height * 0.2,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.black,
           borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
         ),
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Flexible(
+                  const Flexible(
                     flex: 65,
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -55,24 +54,24 @@ class MediaPlayerContainer extends StatelessWidget {
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.favorite_border,
                           color: Colors.white,
                           size: 30,
                         ),
                         Container(
-                          padding: EdgeInsets.all(6),
+                          padding: const EdgeInsets.all(6),
                           decoration: BoxDecoration(
                             color: Colors.orange,
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          child: Icon(
+                          child: const Icon(
                             Icons.play_arrow,
                             color: Colors.white,
                             size: 20,
                           ),
                         ),
-                        Icon(
+                        const Icon(
                           Icons.playlist_play,
                           color: Colors.white,
                           size: 30,
@@ -87,7 +86,7 @@ class MediaPlayerContainer extends StatelessWidget {
               flex: 5,
               child: LinearProgressIndicator(
                 backgroundColor: Colors.grey[900],
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.teal),
+                valueColor: const AlwaysStoppedAnimation<Color>(Colors.teal),
                 value: 0.4, // Example value, replace with actual percentage
               ),
             ),

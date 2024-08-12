@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../application/media/media_cubit.dart';
 import '../../application/my_app/my_app_cubit.dart';
-import '../../domain/media_model.dart';
 
 class MediaList extends StatelessWidget {
   const MediaList({super.key});

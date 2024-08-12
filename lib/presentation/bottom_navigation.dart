@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../application/my_app/my_app_cubit.dart';
 import '../application/my_app/my_app_state.dart';
-import '../core/components/default/my_app_bar.dart';
 import 'home_page.dart';
 import 'media_list/widgets/media_player_container.dart';
 import 'package:awesome_bottom_bar/awesome_bottom_bar.dart';
@@ -25,9 +24,9 @@ class _BottomNavigationState extends State<BottomNavigation>
 
   final List<Widget> _pages = <Widget>[
     const HomePage(),
-    Center(child: const Text('Search')),
-    Center(child: const Text('Voice')),
-    Center(child: const Text('Community')),
+    const Center(child: Text('Search')),
+    const Center(child: Text('Voice')),
+    const Center(child: Text('Community')),
     const Text('Profile'),
   ];
 
@@ -110,7 +109,7 @@ class _BottomNavigationState extends State<BottomNavigation>
                 right: 0,
                 bottom: 0,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(20),
                     topRight: Radius.circular(20),
                   ),
@@ -131,7 +130,7 @@ class _BottomNavigationState extends State<BottomNavigation>
                       colorSelected: Colors.orange,
                       indexSelected: _selectedIndex,
                       onTap: _onItemTapped,
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(20),
                         topRight: Radius.circular(20),
                       ),

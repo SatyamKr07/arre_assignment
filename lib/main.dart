@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'application/media/media_cubit.dart';
 import 'presentation/bottom_navigation.dart';
-import 'presentation/home_page.dart';
 
 void main() {
   runApp(const MyApp());
