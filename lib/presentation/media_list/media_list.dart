@@ -12,7 +12,8 @@ class MediaList extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<MediaCubit, MediaState>(
       builder: (context, state) {
-        return ListView.builder(
+        return ListView.separated(
+          physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: state.mediaList.length,
           itemBuilder: (context, index) {
@@ -26,6 +27,9 @@ class MediaList extends StatelessWidget {
                 mediaModel: state.mediaList[index],
               ),
             );
+          },
+          separatorBuilder: (BuildContext context, int index) {
+            return const SizedBox(height: 16);
           },
         );
       },

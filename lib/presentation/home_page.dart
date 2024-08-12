@@ -7,9 +7,24 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // appBar: const CustomAppBar(),
-      body: MediaList(),
+    return const Scaffold(
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverAppBar(
+            toolbarHeight: 80,
+            floating: true,
+            snap: true,
+            elevation: 0,
+            backgroundColor: Colors.transparent,
+            flexibleSpace: FlexibleSpaceBar(
+              background: CustomAppBar(),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: MediaList(),
+          ),
+        ],
+      ),
     );
   }
 }

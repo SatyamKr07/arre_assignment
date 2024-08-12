@@ -14,7 +14,6 @@ class MediaItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 8.0),
       child: Stack(
         alignment: Alignment.center,
         children: [

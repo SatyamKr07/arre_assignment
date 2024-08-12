@@ -2,13 +2,17 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.transparent,
+      clipBehavior: Clip.hardEdge,
+      decoration: BoxDecoration(
+        color: Colors.grey[200]!.withOpacity(0.1),
+        borderRadius: BorderRadius.vertical(bottom: Radius.circular(16)),
+      ),
       child: ClipRRect(
         borderRadius: BorderRadius.vertical(bottom: Radius.circular(16)),
         child: BackdropFilter(
@@ -18,11 +22,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             child: AppBar(
               backgroundColor: Colors.transparent,
               elevation: 0,
-              toolbarHeight: 70,
+              toolbarHeight: 240, // Increased from 200
               title: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  SizedBox(height: 32),
                   Row(
                     children: [
                       Text(
@@ -62,20 +67,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                       ],
                     ),
                   ),
+                  SizedBox(height: 24),
                 ],
               ),
               actions: [
                 IconButton(
                   icon: Icon(Icons.notifications_outlined, size: 24),
-                  onPressed: () {
-                    // Add notification logic here
-                  },
+                  onPressed: () {},
                 ),
                 IconButton(
                   icon: Icon(Icons.message_outlined, size: 24),
-                  onPressed: () {
-                    // Add headphones logic here
-                  },
+                  onPressed: () {},
                 ),
               ],
             ),
@@ -83,8 +85,5 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
     );
-  }
-
-  @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 20);
+  } // Increased from kToolbarHeight + 20
 }
