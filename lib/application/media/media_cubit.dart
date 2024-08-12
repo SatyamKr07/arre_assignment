@@ -35,37 +35,37 @@ class MediaCubit extends Cubit<MediaState> {
     final listMedia = [
       MediaModel(
         id: '1',
-        thumbnailUrl: 'https://picsum.photos/200/300',
+        thumbnailUrl: 'https://picsum.photos/200/300?id=10',
         mediaLink: 'https://example.com/audio1.mp3',
       ),
       MediaModel(
         id: '2',
-        thumbnailUrl: 'https://picsum.photos/200/300',
+        thumbnailUrl: 'https://picsum.photos/200/300?id=2',
         mediaLink: 'https://example.com/audio2.mp3',
       ),
       MediaModel(
         id: '3',
-        thumbnailUrl: 'https://picsum.photos/200/300',
+        thumbnailUrl: 'https://picsum.photos/200/300?id=3',
         mediaLink: 'https://example.com/audio3.mp3',
       ),
       MediaModel(
         id: '4',
-        thumbnailUrl: 'https://picsum.photos/200/300',
+        thumbnailUrl: 'https://picsum.photos/200/300?id=4',
         mediaLink: 'https://example.com/audio4.mp3',
       ),
       MediaModel(
         id: '5',
-        thumbnailUrl: 'https://picsum.photos/200/300',
+        thumbnailUrl: 'https://picsum.photos/200/300?id=5',
         mediaLink: 'https://example.com/audio5.mp3',
       ),
       MediaModel(
         id: '6',
-        thumbnailUrl: 'https://picsum.photos/200/300',
+        thumbnailUrl: 'https://picsum.photos/200/300?id=6',
         mediaLink: 'https://example.com/audio6.mp3',
       ),
       MediaModel(
         id: '7',
-        thumbnailUrl: 'https://picsum.photos/200/300',
+        thumbnailUrl: 'https://picsum.photos/200/300?id=7',
         mediaLink: 'https://example.com/audio7.mp3',
       ),
     ];
