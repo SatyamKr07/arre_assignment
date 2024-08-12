@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../application/my_app/my_app_cubit.dart';
 import '../application/my_app/my_app_state.dart';
+import '../core/components/default/my_app_bar.dart';
 import 'home_page.dart';
 import 'media_list/widgets/media_player_container.dart';
 import 'package:awesome_bottom_bar/awesome_bottom_bar.dart';
@@ -126,6 +127,14 @@ class _BottomNavigationState extends State<BottomNavigation>
                     topRight: Radius.circular(20),
                   ),
                 ),
+              ),
+              Positioned(
+                top: 0,
+                left: 0,
+                right: 0,
+                child: CustomAppBar(
+                    // Remove shadow
+                    ),
               ),
             ],
           ),

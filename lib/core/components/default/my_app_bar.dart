@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -5,57 +7,62 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PreferredSize(
-      preferredSize: preferredSize,
-      child: SafeArea(
-        child: AppBar(
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          title: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Row(
+    return Container(
+      color: Colors.transparent,
+      child: ClipRRect(
+        borderRadius: BorderRadius.vertical(bottom: Radius.circular(16)),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+          child: Container(
+            color: Colors.black.withOpacity(0.1),
+            child: AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              toolbarHeight: 90,
+              title: const Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Arré',
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    children: [
+                      Text(
+                        'Arré',
+                        style: TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(width: 8),
+                    ],
                   ),
-                  SizedBox(width: 8),
+                  // SizedBox(height: 8),
+                  Chip(
+                    label: Text(
+                      'VOICE',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14,
+                      ),
+                    ),
+                    backgroundColor: Colors.teal,
+                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 2),
+                  ),
                 ],
               ),
-              Chip(
-                label: Text(
-                  'VOICE',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
-                  ),
+              actions: [
+                IconButton(
+                  icon: Icon(Icons.notifications_outlined, size: 28),
+                  onPressed: () {
+                    // Add notification logic here
+                  },
                 ),
-                backgroundColor: Colors.teal,
-                padding: EdgeInsets.symmetric(horizontal: 8, vertical: 0),
-              ),
-            ],
-          ),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.notifications_outlined),
-              onPressed: () {
-                // Add notification logic here
-              },
-            ),
-            IconButton(
-              icon: Icon(Icons.headphones_outlined),
-              onPressed: () {
-                // Add headphones logic here
-              },
-            ),
-          ],
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.vertical(
-              bottom: Radius.circular(16),
+                IconButton(
+                  icon: Icon(Icons.headphones_outlined, size: 28),
+                  onPressed: () {
+                    // Add headphones logic here
+                  },
+                ),
+              ],
             ),
           ),
         ),

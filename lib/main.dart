@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Arre Voice App',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       home: MultiBlocProvider(
         providers: [
