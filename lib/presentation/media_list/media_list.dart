@@ -16,15 +16,11 @@ class MediaList extends StatelessWidget {
           shrinkWrap: true,
           itemCount: state.mediaList.length,
           itemBuilder: (context, index) {
-            return InkWell(
+            return MediaItem(
+              mediaModel: state.mediaList[index],
               onTap: () {
-                //if other media is playing then stop it
-                //play the current media
                 context.read<MyAppCubit>().showMediaPlayer();
               },
-              child: MediaItem(
-                mediaModel: state.mediaList[index],
-              ),
             );
           },
           separatorBuilder: (BuildContext context, int index) {

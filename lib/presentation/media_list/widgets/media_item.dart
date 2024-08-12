@@ -5,10 +5,12 @@ import '../../../domain/media_model.dart';
 
 class MediaItem extends StatelessWidget {
   final MediaModel mediaModel;
+  final Function() onTap;
 
   const MediaItem({
     super.key,
     required this.mediaModel,
+    required this.onTap,
   });
 
   @override
@@ -18,10 +20,13 @@ class MediaItem extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           MyCachedNetworkImage(imageUrl: mediaModel.thumbnailUrl),
-          const Icon(
-            Icons.play_circle_filled,
-            size: 50,
-            color: Colors.white,
+          GestureDetector(
+            onTap: onTap,
+            child: const Icon(
+              Icons.play_circle_filled,
+              size: 50,
+              color: Colors.white,
+            ),
           ),
         ],
       ),
