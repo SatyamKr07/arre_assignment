@@ -14,7 +14,7 @@ class MyCachedNetworkImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double defaultHeight = MediaQuery.of(context).size.height / 2.5;
+    double defaultHeight = MediaQuery.of(context).size.height / 5;
 
     return CachedNetworkImage(
       imageUrl: imageUrl,

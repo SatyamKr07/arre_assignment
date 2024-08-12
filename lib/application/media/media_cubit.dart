@@ -48,6 +48,26 @@ class MediaCubit extends Cubit<MediaState> {
         thumbnailUrl: 'https://picsum.photos/200/300',
         mediaLink: 'https://example.com/audio3.mp3',
       ),
+      MediaModel(
+        id: '4',
+        thumbnailUrl: 'https://picsum.photos/200/300',
+        mediaLink: 'https://example.com/audio4.mp3',
+      ),
+      MediaModel(
+        id: '5',
+        thumbnailUrl: 'https://picsum.photos/200/300',
+        mediaLink: 'https://example.com/audio5.mp3',
+      ),
+      MediaModel(
+        id: '6',
+        thumbnailUrl: 'https://picsum.photos/200/300',
+        mediaLink: 'https://example.com/audio6.mp3',
+      ),
+      MediaModel(
+        id: '7',
+        thumbnailUrl: 'https://picsum.photos/200/300',
+        mediaLink: 'https://example.com/audio7.mp3',
+      ),
     ];
 
     emit(state.copyWith(mediaList: listMedia, isLoading: false));

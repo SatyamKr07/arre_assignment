@@ -81,6 +81,7 @@ class _BottomNavigationState extends State<BottomNavigation>
       },
       builder: (context, state) {
         return Scaffold(
+          extendBody: true,
           body: Stack(
             children: [
               PageView(
@@ -101,28 +102,32 @@ class _BottomNavigationState extends State<BottomNavigation>
                     ),
                   ),
                 ),
+              Positioned(
+                left: 0,
+                right: 0,
+                bottom: 0,
+                child: BottomBarCreative(
+                  items: const [
+                    TabItem(icon: Icons.home),
+                    TabItem(icon: Icons.search),
+                    TabItem(icon: Icons.mic),
+                    TabItem(icon: Icons.group),
+                    TabItem(icon: Icons.person),
+                  ],
+                  backgroundColor: state.isMediaPlayerVisible
+                      ? Colors.black
+                      : Colors.black54,
+                  color: Colors.grey,
+                  colorSelected: Colors.orange,
+                  indexSelected: _selectedIndex,
+                  onTap: _onItemTapped,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(20),
+                    topRight: Radius.circular(20),
+                  ),
+                ),
+              ),
             ],
-          ),
-          bottomNavigationBar: BottomBarCreative(
-            items: const [
-              TabItem(icon: Icons.home, title: 'Home'),
-              TabItem(icon: Icons.search, title: 'Search'),
-              TabItem(icon: Icons.mic, title: 'Voice'),
-              TabItem(icon: Icons.group, title: 'Community'),
-              TabItem(icon: Icons.person, title: 'Profile'),
-            ],
-            backgroundColor:
-                context.read<MyAppCubit>().state.isMediaPlayerVisible
-                    ? Colors.black
-                    : Colors.white.withOpacity(0.1),
-            color: Colors.grey,
-            colorSelected: Colors.orange,
-            indexSelected: _selectedIndex,
-            onTap: _onItemTapped,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20),
-              topRight: Radius.circular(20),
-            ),
           ),
         );
       },

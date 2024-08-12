@@ -15,7 +15,7 @@ class MediaPlayerContainer extends StatelessWidget {
         }
       },
       child: Container(
-        height: MediaQuery.of(context).size.height * 0.1,
+        height: MediaQuery.of(context).size.height * 0.2,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
