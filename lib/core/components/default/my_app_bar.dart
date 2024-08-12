@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({super.key});
+class MyAppBar extends StatelessWidget {
+  const MyAppBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,8 @@ class CustomAppBar extends StatelessWidget {
                       color: Colors.greenAccent.withOpacity(0.6),
                       borderRadius: BorderRadius.circular(16),
                     ),
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     child: const Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [

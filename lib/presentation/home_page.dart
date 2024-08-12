@@ -17,7 +17,7 @@ class HomePage extends StatelessWidget {
             elevation: 0,
             backgroundColor: Colors.transparent,
             flexibleSpace: FlexibleSpaceBar(
-              background: CustomAppBar(),
+              background: MyAppBar(),
             ),
           ),
           SliverToBoxAdapter(
