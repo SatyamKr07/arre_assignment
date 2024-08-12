@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../application/my_app/my_app_cubit.dart';
@@ -107,24 +109,33 @@ class _BottomNavigationState extends State<BottomNavigation>
                 left: 0,
                 right: 0,
                 bottom: 0,
-                child: BottomBarCreative(
-                  items: const [
-                    TabItem(icon: Icons.home),
-                    TabItem(icon: Icons.search),
-                    TabItem(icon: Icons.mic),
-                    TabItem(icon: Icons.group),
-                    TabItem(icon: Icons.person),
-                  ],
-                  backgroundColor: state.isMediaPlayerVisible
-                      ? Colors.black
-                      : Colors.black54,
-                  color: Colors.grey,
-                  colorSelected: Colors.orange,
-                  indexSelected: _selectedIndex,
-                  onTap: _onItemTapped,
+                child: ClipRRect(
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(20),
                     topRight: Radius.circular(20),
+                  ),
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                    child: BottomBarCreative(
+                      items: const [
+                        TabItem(icon: Icons.home),
+                        TabItem(icon: Icons.search),
+                        TabItem(icon: Icons.mic),
+                        TabItem(icon: Icons.group),
+                        TabItem(icon: Icons.person),
+                      ],
+                      backgroundColor: state.isMediaPlayerVisible
+                          ? Colors.black
+                          : Colors.black54.withOpacity(0.5),
+                      color: Colors.grey,
+                      colorSelected: Colors.orange,
+                      indexSelected: _selectedIndex,
+                      onTap: _onItemTapped,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(20),
+                        topRight: Radius.circular(20),
+                      ),
+                    ),
                   ),
                 ),
               ),
