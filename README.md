@@ -4,7 +4,7 @@
 
 ### Video Demo
 
-https://github.com/your-username/your-repo/assets/your-asset-folder/app-demo.mp4
+https://github.com/user-attachments/assets/51c22feb-69a2-40ba-8833-6650a12a3989
 
 ### Screenshots
 
