@@ -19,7 +19,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               backgroundColor: Colors.transparent,
               elevation: 0,
               toolbarHeight: 90,
-              title: const Column(
+              title: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -32,20 +32,35 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(width: 8),
+                      // SizedBox(width: 8),
                     ],
                   ),
                   // SizedBox(height: 8),
-                  Chip(
-                    label: Text(
-                      'VOICE',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                      ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.greenAccent.withOpacity(0.6),
+                      borderRadius: BorderRadius.circular(16),
                     ),
-                    backgroundColor: Colors.teal,
-                    padding: EdgeInsets.symmetric(horizontal: 12, vertical: 2),
+                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.surround_sound_outlined,
+                          color: Colors.white,
+                          size: 10,
+                        ),
+                        SizedBox(width: 4),
+                        Text(
+                          'VOICE',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 10,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
