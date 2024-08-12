@@ -4,6 +4,7 @@ import '../application/my_app/my_app_cubit.dart';
 import '../application/my_app/my_app_state.dart';
 import 'home_page.dart';
 import 'media_list/widgets/media_player_container.dart';
+import 'package:awesome_bottom_bar/awesome_bottom_bar.dart';
 
 class BottomNavigation extends StatefulWidget {
   const BottomNavigation({super.key});
@@ -102,22 +103,26 @@ class _BottomNavigationState extends State<BottomNavigation>
                 ),
             ],
           ),
-          bottomNavigationBar: BottomNavigationBar(
+          bottomNavigationBar: BottomBarCreative(
             items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.search), label: 'Search'),
-              BottomNavigationBarItem(icon: Icon(Icons.mic), label: 'Voice'),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.group), label: 'Community'),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.person), label: 'Profile'),
+              TabItem(icon: Icons.home, title: 'Home'),
+              TabItem(icon: Icons.search, title: 'Search'),
+              TabItem(icon: Icons.mic, title: 'Voice'),
+              TabItem(icon: Icons.group, title: 'Community'),
+              TabItem(icon: Icons.person, title: 'Profile'),
             ],
-            currentIndex: _selectedIndex,
-            selectedItemColor: Colors.orange,
-            unselectedItemColor: Colors.grey,
-            showUnselectedLabels: true,
+            backgroundColor:
+                context.read<MyAppCubit>().state.isMediaPlayerVisible
+                    ? Colors.black
+                    : Colors.white.withOpacity(0.1),
+            color: Colors.grey,
+            colorSelected: Colors.orange,
+            indexSelected: _selectedIndex,
             onTap: _onItemTapped,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20),
+              topRight: Radius.circular(20),
+            ),
           ),
         );
       },
