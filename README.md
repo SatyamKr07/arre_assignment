@@ -1,6 +1,7 @@
 # Arre_assignment_sk
 
-## App Preview
+## App apk link
+https://drive.google.com/drive/folders/1vAr3OYIp1CVuNIOf2PIqdX832GunRVq2?usp=drive_link
 
 ### Video Demo
 
