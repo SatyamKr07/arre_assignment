@@ -18,7 +18,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             child: AppBar(
               backgroundColor: Colors.transparent,
               elevation: 0,
-              toolbarHeight: 90,
+              toolbarHeight: 70,
               title: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,13 +66,13 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
               actions: [
                 IconButton(
-                  icon: Icon(Icons.notifications_outlined, size: 28),
+                  icon: Icon(Icons.notifications_outlined, size: 24),
                   onPressed: () {
                     // Add notification logic here
                   },
                 ),
                 IconButton(
-                  icon: Icon(Icons.headphones_outlined, size: 28),
+                  icon: Icon(Icons.message_outlined, size: 24),
                   onPressed: () {
                     // Add headphones logic here
                   },
