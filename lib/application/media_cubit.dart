@@ -1,6 +1,5 @@
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
-import '../domain/media_model.dart';
+import '../../domain/media_model.dart';
 
 class MediaState extends Equatable {
   final List<MediaModel> mediaList;
@@ -22,22 +21,5 @@ class MediaState extends Equatable {
       mediaList: mediaList ?? this.mediaList,
       isLoading: isLoading ?? this.isLoading,
     );
-  }
-}
-
-class MediaCubit extends Cubit<MediaState> {
-  MediaCubit() : super(const MediaState());
-
-  void loadMedia() {
-    emit(state.copyWith(isLoading: true));
-
-    // Simulated media data
-    final listMedia = [
-      MediaModel(id: '1', thumbnailUrl: 'https://picsum.photos/200/300'),
-      MediaModel(id: '2', thumbnailUrl: 'https://picsum.photos/200/300'),
-      MediaModel(id: '3', thumbnailUrl: 'https://picsum.photos/200/300'),
-    ];
-
-    emit(state.copyWith(mediaList: listMedia, isLoading: false));
   }
 }

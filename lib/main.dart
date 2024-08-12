@@ -1,7 +1,8 @@
+import 'package:arre_assignment_sk/application/my_app/my_app_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'application/media_cubit.dart';
+import 'application/media/media_cubit.dart';
 import 'presentation/bottom_navigation.dart';
 import 'presentation/home_page.dart';
 
@@ -20,8 +21,15 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.orange,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: BlocProvider(
-        create: (context) => MediaCubit()..loadMedia(),
+      home: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => MediaCubit()..loadMedia(),
+          ),
+          BlocProvider(
+            create: (context) => MyAppCubit(),
+          ),
+        ],
         child: const BottomNavigation(),
       ),
     );
