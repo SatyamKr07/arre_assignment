@@ -127,7 +127,7 @@ class _BottomNavigationState extends State<BottomNavigation>
                       backgroundColor: state.isMediaPlayerVisible
                           ? Colors.black
                           : Colors.black54.withOpacity(0.5),
-                      color: _selectedIndex == 2 ? Colors.orange : Colors.white,
+                      color: Colors.white,
                       colorSelected: Colors.orange,
                       indexSelected: _selectedIndex,
                       onTap: _onItemTapped,
