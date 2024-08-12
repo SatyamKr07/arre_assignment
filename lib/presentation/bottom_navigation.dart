@@ -96,7 +96,7 @@ class _BottomNavigationState extends State<BottomNavigation>
                     position: _slideAnimation,
                     child: MediaPlayerContainer(
                       onDismiss: () =>
-                          context.read<MyAppCubit>().toggleMediaPlayer(),
+                          context.read<MyAppCubit>().hideMediaPlayer(),
                     ),
                   ),
                 ),

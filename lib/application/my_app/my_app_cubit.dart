@@ -15,7 +15,11 @@ class MyAppCubit extends Cubit<MyAppState> {
     emit(state.copyWith(themeMode: newThemeMode));
   }
 
-  toggleMediaPlayer() {
-    emit(state.copyWith(isMediaPlayerVisible: !state.isMediaPlayerVisible));
+  void showMediaPlayer() {
+    emit(state.copyWith(isMediaPlayerVisible: true));
+  }
+
+  void hideMediaPlayer() {
+    emit(state.copyWith(isMediaPlayerVisible: false));
   }
 }

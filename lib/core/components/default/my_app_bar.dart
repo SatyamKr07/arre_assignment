@@ -11,16 +11,21 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
-          title: Row(
+          title: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
-              Text(
-                'Arré',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
+              const Row(
+                children: [
+                  Text(
+                    'Arré',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(width: 8),
+                ],
               ),
-              SizedBox(width: 8),
               Chip(
                 label: Text(
                   'VOICE',
