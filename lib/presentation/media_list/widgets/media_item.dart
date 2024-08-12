@@ -13,20 +13,18 @@ class MediaItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 8.0),
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            MyCachedNetworkImage(imageUrl: mediaModel.thumbnailUrl),
-            IconButton(
-              icon: const Icon(Icons.play_circle_filled,
-                  size: 50, color: Colors.white),
-              onPressed: () {},
-            ),
-          ],
-        ),
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          MyCachedNetworkImage(imageUrl: mediaModel.thumbnailUrl),
+          const Icon(
+            Icons.play_circle_filled,
+            size: 50,
+            color: Colors.white,
+          ),
+        ],
       ),
     );
   }
